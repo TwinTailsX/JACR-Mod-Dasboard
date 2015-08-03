@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.2.0
+// Version: 0.2.1
 
 // Description: Created for 1-click modding in JACR.
 
@@ -11,7 +11,7 @@
 
 // Variables //
 var jacr = {
-	mode: skip,
+	mode: "skip",
 	open: false
 };
 
