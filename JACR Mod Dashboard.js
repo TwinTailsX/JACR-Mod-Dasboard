@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.2.1
+// Version: 0.3.0
 
 // Description: Created for 1-click modding in JACR.
 
@@ -21,14 +21,14 @@ $("head").append("<link rel='stylesheet' type='text/css' href='https://rawgit.co
 // Retrieve external HTML and append to body
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", function (data) {
 	// Add button to Community Settings menu
-	$("#room-settings-menu").append("<a id='jacr-open' class='item general' href=''><i class='icon icon-settings-white'></i><span class='label'>Mod Dashboard</span></a>");
+	$("#room-settings-menu").append("<a id='jacr-open' class='item general' href=''><i class='icon icon-settings-white'></i><span class='label'>Dashboard</span></a>");
 
 	// Add pane
 	$("#room-settings").append(data);
 
 	// Add functionality
 	$("#jacr-open").on("click", function (event) {
-		event.preventDefault()
+		event.preventDefault();
 		// Open dashboard if not already open
 		if (! jacr.open) {
 			// Vanity
@@ -39,6 +39,8 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 
 			// Show dashboard
 			$("#jacr-ui").css("display", "block");
+
+			jacr.open = true;
 		} else {
 			// Vanity
 			$("#jacr-open").addClass("selected");
@@ -48,6 +50,8 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 
 			// Show settings pane
 			$("#room-settings .general-settings").css("display", "block");
+
+			jacr.open = false;
 		}
 	});
 
@@ -59,6 +63,19 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 // Private //
 
 // Buttons functions //
+
+// Toggle skip/lskip
+$("#jacr-theme").on("click", function () {
+	if (jacr.mode = "skip") {
+		jacr.mode = "lockskip";
+		$("#jacr-skip").removeClass("jacr-ui-active");
+		$("#jacr-lockskip").addClass("jacr-ui-active");
+	} else {
+		jacr.mode = "skip";
+		$("#jacr-skip").addClass("jacr-ui-active");
+		$("#jacr-lockskip").removeClass("jacr-ui-active");
+	}
+});
 
 // Skip button
 $("#jacr-theme").on("dblclick", function () {

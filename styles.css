@@ -7,19 +7,24 @@
   /*background-color: #282C35;*/
   width: 744px;
   height: 100%;
-  color: white;
+  color: #eee;
   padding: 10px;
+  text-align: center;
 }
 
-.jacr-ui h2 {
-  color: white;
+.jacr-ui h4 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.jacr-ui a {
-  display: block;
+.jacr-ui button {
   background-color: transparent;
   padding: 10px;
-  text-decoration: none;
+}
+
+.jacr-ui-active {
+  background-color: rebeccapurple;
 }
 
 .divider {
@@ -27,6 +32,7 @@
   width: 100px;
   height: 2px;
   background-color: grey;
+  margin: 40px auto 40px auto;
 }
 
 .jacr-title {
@@ -36,4 +42,27 @@
 
 #jacr-open {
   color: #eee;
+  background: transparent;
+}
+
+#jacr-switchbox {
+  display: block;
+  margin: auto;
+}
+
+#jacr-skip {
+  text-align: inherit;
+  padding: 30px;
+}
+
+#jacr-lockskip {
+  text-align: inherit;
+  padding: 30px;
+}
+
+#jacr-input {
+  padding: 10px;
+  width: 400px;
+  margin: 40px auto 40px auto;
+  display: block;
 }
