@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.1.1
+// Version: 0.1.2
 
 // Description: Created for 1-click modding in JACR.
 
@@ -13,10 +13,10 @@
 var mode = "skip";
 
 // Activate
-$("head").append("<link rel='stylesheet' type='text/css' href='https://raw.githubusercontent.com/TwinTailsX/JACR-Mod-Dashboard/master/styles.css'>");
+$("head").append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/styles.css'>");
 
 // Retrieve external HTML and append to body
-$.get("https://raw.githubusercontent.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", function (data) {
+$.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", function (data) {
 	$("body").append(data);
 	console.log("JACR Mod Dashboard loaded.");
 }).fail(function (data) {
