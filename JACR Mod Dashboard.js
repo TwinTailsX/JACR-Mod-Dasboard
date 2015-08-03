@@ -27,7 +27,8 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 	$("#room-settings").append(data);
 
 	// Add functionality
-	$("#jacr-open").on("click", function () {
+	$("#jacr-open").on("click", function (event) {
+		event.preventDefault()
 		// Open dashboard if not already open
 		if (! jacr.open) {
 			// Vanity
@@ -37,13 +38,13 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 			$("#room-settings .general-settings").css("display", "none");
 
 			// Show dashboard
-			("#jacr-ui").css("display", "block");
+			$("#jacr-ui").css("display", "block");
 		} else {
 			// Vanity
 			$("#jacr-open").addClass("selected");
 
 			// Hide dashboard
-			("#jacr-ui").css("display", "none");
+			$("#jacr-ui").css("display", "none");
 
 			// Show settings pane
 			$("#room-settings .general-settings").css("display", "block");
