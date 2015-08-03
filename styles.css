@@ -1,0 +1,34 @@
+/* Dashboard CSS */
+.jacr-ui {
+  display: block;
+  position: absolute;
+  top: 54px;
+  left: 0;
+  background-color: #282C35;
+  width: 800px;
+  height: 600px;
+  color: white;
+}
+
+.jacr-ui h2 {
+  color: white;
+}
+
+.jacr-ui a {
+  display: block;
+  background-color: transparent;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.divider {
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: grey;
+}
+
+.jacr-title {
+  padding: 15px;
+  margin: auto;
+}
