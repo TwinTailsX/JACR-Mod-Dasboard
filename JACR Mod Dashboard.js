@@ -17,7 +17,34 @@ $("head").append("<link rel='stylesheet' type='text/css' href='https://rawgit.co
 
 // Retrieve external HTML and append to body
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", function (data) {
-	$("body").append(data);
+	// Add button to Community Settings menu
+	$("#room-settings-menu").append("<div> id='jacr-open' class='item general'><i class='icon icon-settings-white'></i><span class='label'>Mod Dashboard</span></div>");
+
+	// Add pane
+	$("#room-settings").append(data);
+
+	// Add functionality
+	$("#jacr-open").on("click", function () {
+		// Vanity
+		$("#room-settings-menu .selected").removeClass("selected");
+
+		// Hide settings pane
+		$("#room-settings .general-settings").css("display", "none");
+
+		// Show dashboard
+		("#jacr-ui").css("display", "block");
+	})
+
+	$("#room-settings-menu .item.general[data-value=general]").on("click", function () {
+		// Vanity
+		$("#jacr-open").addClass("selected");
+
+		// Hide dashboard
+		("#jacr-ui").css("display", "none");
+
+		// Show settings pane
+		$("#room-settings .general-settings").css("display", "block");
+	})
 	console.log("JACR Mod Dashboard loaded.");
 }).fail(function (data) {
 		alert("Failed to load dashboard. Is GitHub down?");

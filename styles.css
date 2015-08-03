@@ -1,13 +1,14 @@
 /* Dashboard CSS */
 .jacr-ui {
-  display: block;
+  display: none;
   position: absolute;
-  top: 54px;
-  left: 0;
+  top: 0;
+  left: 220px;
   background-color: #282C35;
-  width: 800px;
-  height: 600px;
+  width: 744px;
+  height: 100%;
   color: white;
+  padding: 10px;
 }
 
 .jacr-ui h2 {
