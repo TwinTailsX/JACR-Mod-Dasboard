@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.1.2
+// Version: 0.2.0
 
 // Description: Created for 1-click modding in JACR.
 
@@ -10,7 +10,10 @@
 // Hide image btns
 
 // Variables //
-var mode = "skip";
+var jacr = {
+	mode: skip,
+	open: false
+};
 
 // Activate
 $("head").append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/styles.css'>");
@@ -18,33 +21,35 @@ $("head").append("<link rel='stylesheet' type='text/css' href='https://rawgit.co
 // Retrieve external HTML and append to body
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", function (data) {
 	// Add button to Community Settings menu
-	$("#room-settings-menu").append("<div> id='jacr-open' class='item general'><i class='icon icon-settings-white'></i><span class='label'>Mod Dashboard</span></div>");
+	$("#room-settings-menu").append("<a id='jacr-open' class='item general' href=''><i class='icon icon-settings-white'></i><span class='label'>Mod Dashboard</span></a>");
 
 	// Add pane
 	$("#room-settings").append(data);
 
 	// Add functionality
 	$("#jacr-open").on("click", function () {
-		// Vanity
-		$("#room-settings-menu .selected").removeClass("selected");
+		// Open dashboard if not already open
+		if (! jacr.open) {
+			// Vanity
+			$("#room-settings-menu .selected").removeClass("selected");
 
-		// Hide settings pane
-		$("#room-settings .general-settings").css("display", "none");
+			// Hide settings pane
+			$("#room-settings .general-settings").css("display", "none");
 
-		// Show dashboard
-		("#jacr-ui").css("display", "block");
-	})
+			// Show dashboard
+			("#jacr-ui").css("display", "block");
+		} else {
+			// Vanity
+			$("#jacr-open").addClass("selected");
 
-	$("#room-settings-menu .item.general[data-value=general]").on("click", function () {
-		// Vanity
-		$("#jacr-open").addClass("selected");
+			// Hide dashboard
+			("#jacr-ui").css("display", "none");
 
-		// Hide dashboard
-		("#jacr-ui").css("display", "none");
+			// Show settings pane
+			$("#room-settings .general-settings").css("display", "block");
+		}
+	});
 
-		// Show settings pane
-		$("#room-settings .general-settings").css("display", "block");
-	})
 	console.log("JACR Mod Dashboard loaded.");
 }).fail(function (data) {
 		alert("Failed to load dashboard. Is GitHub down?");
@@ -56,97 +61,97 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 
 // Skip button
 $("#jacr-theme").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip theme");
 	} else {
 		API.sendChat("!lockskip theme");
 	}
-})
+});
 
 $("#jacr-forbidden").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip forbidden");
 	} else {
 		API.sendChat("!lockskip forbidden");
 	}
-})
+});
 
 $("#jacr-op").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip op");
 	} else {
 		API.sendChat("!lockskip op");
 	}
-})
+});
 
 $("#jacr-unpopular").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip unpopular");
 	} else {
 		API.sendChat("!lockskip unpopular");
 	}
-})
+});
 
 $("#jacr-unavailable").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip unavailable");
 	} else {
 		API.sendChat("!lockskip unavailable");
 	}
-})
+});
 
 $("#jacr-history").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip history");
 	} else {
 		API.sendChat("!lockskip history");
 	}
-})
+});
 
 $("#jacr-nsfw").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip nsfw");
 	} else {
 		API.sendChat("!lockskip nsfw");
 	}
-})
+});
 
 $("#jacr-motto").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip motto");
 	} else {
 		API.sendChat("!lockskip motto");
 	}
-})
+});
 
 $("#jacr-quality").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip quality");
 	} else {
 		API.sendChat("!lockskip quality");
 	}
-})
+});
 
 $("#jacr-mix").on("dblclick", function () {
-	if (mode = "skip") {
+	if (jacr.mode = "skip") {
 		API.sendChat("!skip mix");
 	} else {
 		API.sendChat("!lockskip mix");
 	}
-})
+});
 
 // Waitlist //
 $("#jacr-lock").on("dblclick", function () {
 	API.sendChat("!lock");
-})
+});
 
 $("#jacr-unlock").on("dblclick", function () {
 	API.sendChat("!unlock");
-})
+});
 
 $("#jacr-ping").on("dblclick", function () {
 	API.sendChat("!ping");
-})
+});
 
 // Input //
 $("#jacr-kick").on("dblclick", function () {
