@@ -19,12 +19,23 @@
 }
 
 .jacr-ui button {
-  background-color: transparent;
+  color: beige;
+  text-decoration: none;
+  background-color: purple;
   padding: 10px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .jacr-ui-active {
   background-color: rebeccapurple;
+}
+
+.jacr-ui a {
+  color: aliceblue;
+  text-decoration: none;
+  background-color: purple;
+  padding: 10px;
 }
 
 .divider {
@@ -32,7 +43,7 @@
   width: 100px;
   height: 2px;
   background-color: grey;
-  margin: 40px auto 40px auto;
+  margin: 20px auto 20px auto;
 }
 
 .jacr-title {
@@ -47,22 +58,22 @@
 
 #jacr-switchbox {
   display: block;
-  margin: auto;
+  margin: 30px auto 30px auto;
 }
 
 #jacr-skip {
-  text-align: inherit;
-  padding: 30px;
+  padding: 10px;
+  display: inline;
 }
 
 #jacr-lockskip {
-  text-align: inherit;
-  padding: 30px;
+  padding: 10px;
+  display: inline;
 }
 
 #jacr-input {
   padding: 10px;
   width: 400px;
-  margin: 40px auto 40px auto;
+  margin: 10px auto 10px auto;
   display: block;
 }

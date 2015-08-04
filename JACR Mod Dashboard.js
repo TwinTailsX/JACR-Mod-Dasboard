@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.3.0
+// Version: 0.3.1
 
 // Description: Created for 1-click modding in JACR.
 
