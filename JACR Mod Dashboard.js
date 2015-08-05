@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.3.2
+// Version: 0.3.3
 
 // Description: Created for 1-click modding in JACR.
 
@@ -69,7 +69,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 // Buttons functions //
 
 // Toggle skip/lskip
-$("#jacr-skip").on("click", function () {
+$("#jacr-skip").on("click", "#jacr-skip", function () {
 	// Change mode
 	jacr.mode = "lockskip";
 	$("#jacr-skip").addClass("jacr-ui-active");

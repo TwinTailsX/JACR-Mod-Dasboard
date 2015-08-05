@@ -64,11 +64,13 @@
 #jacr-skip {
   padding: 10px;
   display: inline;
+  cursor: pointer;
 }
 
 #jacr-lockskip {
   padding: 10px;
   display: inline;
+  cursor: pointer;
 }
 
 #jacr-input {
