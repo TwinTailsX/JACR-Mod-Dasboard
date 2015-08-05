@@ -11,6 +11,7 @@
 
 // Variables //
 var jacr = {
+	version: "v0.3.3",
 	mode: "skip",
 	open: false
 };
@@ -57,6 +58,8 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 
 			jacr.open = false;
 		}
+
+		$("#jacr-version").text(jacr.version);
 	});
 
 	console.log("JACR Mod Dashboard loaded.");
@@ -76,7 +79,7 @@ $("#jacr-skip").on("click", "#jacr-skip", function () {
 	$("#jacr-lockskip").removeClass("jacr-ui-active");
 });
 
-$("#jacr-lockskip").on("click", function () {
+$("#jacr-lockskip").on("click", "#jacr-lockskip", function () {
 	// Change mode
 	jacr.mode = "lockskip";
 	$("#jacr-skip").removeClass("jacr-ui-active");
