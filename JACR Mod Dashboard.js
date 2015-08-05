@@ -1,6 +1,6 @@
 // Just a Chill Room... Mod Dashboard //
 
-// Version: 0.3.1
+// Version: 0.3.2
 
 // Description: Created for 1-click modding in JACR.
 
@@ -32,7 +32,9 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 		// Open dashboard if not already open
 		if (! jacr.open) {
 			// Vanity
-			$("#room-settings-menu .selected").removeClass("selected");
+			//$("#room-settings-menu .selected").addClass("selected");
+
+			//$("#jacr-open").removeClass("selected");
 
 			// Hide settings pane
 			$("#room-settings .general-settings").css("display", "none");
@@ -43,7 +45,9 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 			jacr.open = true;
 		} else {
 			// Vanity
-			$("#jacr-open").addClass("selected");
+			//$("#room-settings-menu .selected").addClass("selected");
+
+			//$("#jacr-open").removeClass("selected");
 
 			// Hide dashboard
 			$("#jacr-ui").css("display", "none");
@@ -65,16 +69,18 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 // Buttons functions //
 
 // Toggle skip/lskip
-$("#jacr-theme").on("click", function () {
-	if (jacr.mode = "skip") {
-		jacr.mode = "lockskip";
-		$("#jacr-skip").removeClass("jacr-ui-active");
-		$("#jacr-lockskip").addClass("jacr-ui-active");
-	} else {
-		jacr.mode = "skip";
-		$("#jacr-skip").addClass("jacr-ui-active");
-		$("#jacr-lockskip").removeClass("jacr-ui-active");
-	}
+$("#jacr-skip").on("click", function () {
+	// Change mode
+	jacr.mode = "lockskip";
+	$("#jacr-skip").addClass("jacr-ui-active");
+	$("#jacr-lockskip").removeClass("jacr-ui-active");
+});
+
+$("#jacr-lockskip").on("click", function () {
+	// Change mode
+	jacr.mode = "lockskip";
+	$("#jacr-skip").removeClass("jacr-ui-active");
+	$("#jacr-lockskip").addClass("jacr-ui-active");
 });
 
 // Skip button
