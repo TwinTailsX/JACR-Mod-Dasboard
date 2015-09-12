@@ -22,7 +22,7 @@ $("head").append(
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 	function (ui) {
 		var button = "<div id='jacr-open'>";
-				button += "<i class='icon icon-settings-white'></i>";
+				//button += "<i class='icon icon-settings-white'></i>";
 				button += "<img src='https://pbs.twimg.com/profile_images/635749955030921217/w5F52j48_bigger.png'>";
 				button += "</div>";
 
