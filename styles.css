@@ -21,16 +21,16 @@
 }
 
 .jacr-ui button {
-  color: #D0FFF0;
+  /*color: #D0FFF0;*/
   margin: 5px;
   background-color: #6089AD;
 }
 
 .jacr-button i {
-  color: #CDE7FE;
+  /*color: #CDE7FE;*/
 }
 
-.jacr-ui-active {
+#jacr-skip.active {
   background-color: #8AAFD1;
 }
 
@@ -41,7 +41,7 @@
 .divider {
   display: block;
   width: 100px;
-  margin: 20px auto 25px auto;
+  margin: 20px auto auto auto;
 }
 
 .jacr-title {
@@ -71,7 +71,8 @@
 }
 
 #jacr-skip {
-  background-color: #8AAFD1;
+  /*background-color: #8AAFD1;*/
+  background-color: #7CA0C2;
 }
 
 #jacr-lockskip {

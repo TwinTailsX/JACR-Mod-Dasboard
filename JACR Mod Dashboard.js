@@ -24,12 +24,13 @@ $("head").append(
 $("head").append(
 	"<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>");
 
-$.get("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js",
+$.getScript("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js",
 	function (data) {
 		//data();
+		console.log("Loaded MaterializeJS");
 	}).fail(function (error) {
-		alert("JACR Mod Dashboard: Can't load Materialize :l");
-		});
+		//alert("JACR Mod Dashboard: Can't load Materialize :l");
+	});
 
 // Retrieve external HTML and append to body
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
@@ -50,7 +51,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 	//$(".app-right").css("z-index", "3");
 
 	// Add pane
-	$("#room").append(ui);
+	$("#playback").append(ui);
 
 	// Add functionality
 	$("#jacr-open").off("click").on("click", function (event) {
@@ -95,7 +96,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 		// Toggle skip/lskip
 		$("#jacr-skip").off("click").on("click", function () {
 			// Change mode
-			jacr.mode = "lockskip";
+			jacr.mode = "skip";
 			$("#jacr-skip").addClass("jacr-ui-active");
 			$("#jacr-lockskip").removeClass("jacr-ui-active");
 		});
