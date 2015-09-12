@@ -1,45 +1,141 @@
 <div id="jacr-ui" class="jacr-ui">
+	<div id="jacr-overlay">
+		<h2>Chillroom Mod Dashboard</h2><h6 id="jacr-version"><!--Set via jquery--></h6>
 
-	<h2>Chillroom Mod Dashboard</h2><h6 id="jacr-version"><!--Set via jquery--></h6>
 
+		<div id="jacr-switchbox">
+			<button id="jacr-skip" class="jacr-ui-active btn-large">
+				<i class="material-icons left">fast_forward</i>
+				Skip
+			</button>
+			<button id="jacr-lockskip">
+				<i class="material-icons left">repeat</i>
+				Lockskip
+			</button>
+		</div>
 
-	<div id="jacr-switchbox">
-		<h4 id="jacr-skip" class="jacr-ui-active">Skip</h4> <h4 id="jacr-lockskip">Lockskip</h4>
+		<div class="section">
+			<h5>General</h5>
+			<button id="jacr-theme" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">label</i>
+				Theme
+			</button>
+		  <button id="jacr-forbidden" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">not_interested</i>
+				Forbidden
+			</button>
+		  <button id="jacr-op" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">restore</i>
+				OP
+			</button>
+		  <button id="jacr-unpopular" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">thumb_down</i>
+				Unpopular
+			</button>
+		  <button id="jacr-unavailable" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">volume_off</i>
+				Unavailable
+			</button>
+		</div>
+
+		<div class="section">
+		  <button id="jacr-history" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">query_builder</i>
+				History
+			</button>
+		  <button id="jacr-nsfw" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">explicit</i>
+				NSFW
+			</button>
+		  <button id="jacr-motto" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">today</i>
+				Motto
+			</button>
+		  <button id="jacr-quality" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">volume_down</i>
+				Quality
+			</button>
+		  <button id="jacr-mix" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">forward_30</i>
+				Mix
+			</button>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="section">
+			<h5>Waitlist</h5>
+			<button id="jacr-lock" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">lock_outline</i>
+				Lock
+			</button>
+			<button id="jacr-unlock" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">lock_open</i>
+				Unlock
+			</button>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="section">
+	  <h5>Input</h5>
+		  <button id="jacr-kick" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">present_to_all</i>
+				Kick
+			</button>
+		  <button id="jacr-mute" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">mic_off</i>
+				Mute
+			</button>
+		  <button id="jacr-ban" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">report_problem</i>
+				Ban
+			</button>
+		  <button id="jacr-mottoset" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">radio</i>
+				Set Motto
+			</button>
+
+			<input id="jacr-input" type="text" placeholder="Enter relevant text...">
+			<h5>No need to type @ !</h5>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="section">
+		  <h5>Misc</h5>
+		  <button id="jacr-stats" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">equalizer</i>
+				Stats
+			</button>
+		  <button id="jacr-history" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">av_timer</i>
+				History
+			</button>
+		  <button id="jacr-status" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">swap_vertical_circle</i>
+				Status
+			</button>
+			<button id="jacr-ping" class="jacr-button waves-effect waves-light btn">
+				<i class="material-icons left">settings_remote</i>
+				Ping
+			</button>
+			<button id="jacr-link">
+				<i class="material-icons left">video_library</i>
+				Song Link
+			</button>
+		</div>
+
+		<div class="divider"></div>
+
+		<h5>Links</h5>
+		<a class="jacr-button waves-effect waves-light btn" href="http://just-a-chill-room.net/rules/" target="_blank">Rules</a>
+		<a class="jacr-button waves-effect waves-light btn" href="http://just-a-chill-room.net/op-forbidden-list/" target="_blank">OP List</a>
+		<a class="jacr-button waves-effect waves-light btn" href="http://www.emoji-cheat-sheet.com/" target="_blank">Emotes List</a>
+		<a class="jacr-button waves-effect waves-light btn" href="https://chillroom.slack.com/" target="_blank">Staff Slack</a>
+		<a class="jacr-button waves-effect waves-light btn" href="https://justachillroom.slack.com/" target="_blank">Community Slack</a>
+		<a class="jacr-button waves-effect waves-light btn" href="http://just-a-chill-room.net/" target="_blank">Website</a>
+
+		<a href="https://github.com/TwinTailsX/JACR-Mod-Dashboard">Github Repo</a>
 	</div>
-	<button id="jacr-theme" class="jacr-button">Theme</button>
-  <button id="jacr-forbidden" class="jacr-button">Forbidden</button>
-  <button id="jacr-op" class="jacr-button">OP</a>
-  <button id="jacr-unpopular" class="jacr-button">Unpopular</button>
-  <button id="jacr-unavailable" class="jacr-button">Unavailable</button>
-
-  <button id="jacr-history" class="jacr-button">History</button>
-  <button id="jacr-nsfw" class="jacr-button">NSFW</button>
-  <button id="jacr-motto" class="jacr-button">Motto</button>
-  <button id="jacr-quality" class="jacr-button">Quality</a>
-  <button id="jacr-mix" class="jacr-button">Mix</button>
-
-	<h4>Waitlist</h4>
-	<button id="jacr-lock" class="jacr-button">Lock</button>
-	<button id="jacr-unlock" class="jacr-button">Unlock</button>
-
-  <h4>Input</h4>
-  <button id="jacr-kick" class="jacr-button">Kick</button>
-  <button id="jacr-mute" class="jacr-button">Mute</button>
-  <button id="jacr-ban" class="jacr-button">Ban</button>
-  <button id="jacr-mottoset" class="jacr-button">Set Motto</button>
-
-	<input id="jacr-input" type="text" placeholder="Enter relevant text...">
-
-  <h4>Misc</h4>
-  <button id="jacr-stats" class="jacr-button">Stats</button>
-  <button id="jacr-history" class="jacr-button">History</button>
-  <button id="jacr-status" class="jacr-button">Status</button>
-	<button id="jacr-ping" class="jacr-button">Ping</button>
-	<button id="jacr-link">Song Link</button>
-
-	<div class="divider"></div>
-
-	<a class="jacr-button" href="http://just-a-chill-room.net/op-forbidden-list/" target="_blank">OP List</a>
-	<a class="jacr-button" href="http://www.emoji-cheat-sheet.com/" target="_blank">Emotes List</a>
-
 </div>

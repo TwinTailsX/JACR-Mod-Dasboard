@@ -18,6 +18,19 @@ var jacr = {
 $("head").append(
 	"<link rel='stylesheet' type='text/css' href='https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/styles.css'>");
 
+$("head").append(
+	"<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css'>");
+
+$("head").append(
+	"<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>");
+
+$.get("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js",
+	function (data) {
+		//data();
+	}).fail(function (error) {
+		alert("JACR Mod Dashboard: Can't load Materialize :l");
+		});
+
 // Retrieve external HTML and append to body
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 	function (ui) {
@@ -30,14 +43,17 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 	if ($("#rs-skip-button").length > 0) {
 		$("#rs-skip-button").css("display", "none");
 	}
-	// Add button to Community Settings menu
+	// Add button to header menu
 	$("#now-playing-bar").append(button);
+
+	// Bump chat z-index up a notch so it doesn't get covered by our UI
+	//$(".app-right").css("z-index", "3");
 
 	// Add pane
 	$("#room").append(ui);
 
 	// Add functionality
-	$("#jacr-open").on("click", function (event) {
+	$("#jacr-open").off("click").on("click", function (event) {
 		event.preventDefault();
 		// Open dashboard if not already open
 		if (! jacr.open) {
@@ -77,14 +93,14 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 		// Buttons functions //
 
 		// Toggle skip/lskip
-		$("#jacr-skip").on("click", function () {
+		$("#jacr-skip").off("click").on("click", function () {
 			// Change mode
 			jacr.mode = "lockskip";
 			$("#jacr-skip").addClass("jacr-ui-active");
 			$("#jacr-lockskip").removeClass("jacr-ui-active");
 		});
 
-		$("#jacr-lockskip").on("click", function () {
+		$("#jacr-lockskip").off("click").on("click", function () {
 			// Change mode
 			jacr.mode = "lockskip";
 			$("#jacr-skip").removeClass("jacr-ui-active");
@@ -92,7 +108,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 		});
 
 		// Skip button
-		$("#jacr-theme").on("dblclick", function () {
+		$("#jacr-theme").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip theme");
 			} else {
@@ -100,7 +116,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-forbidden").on("dblclick", function () {
+		$("#jacr-forbidden").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip forbidden");
 			} else {
@@ -108,7 +124,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-op").on("dblclick", function () {
+		$("#jacr-op").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip op");
 			} else {
@@ -116,7 +132,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-unpopular").on("dblclick", function () {
+		$("#jacr-unpopular").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip unpopular");
 			} else {
@@ -124,7 +140,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-unavailable").on("dblclick", function () {
+		$("#jacr-unavailable").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip unavailable");
 			} else {
@@ -132,7 +148,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-history").on("dblclick", function () {
+		$("#jacr-history").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip history");
 			} else {
@@ -140,7 +156,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-nsfw").on("dblclick", function () {
+		$("#jacr-nsfw").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip nsfw");
 			} else {
@@ -148,7 +164,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-motto").on("dblclick", function () {
+		$("#jacr-motto").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip motto");
 			} else {
@@ -156,7 +172,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-quality").on("dblclick", function () {
+		$("#jacr-quality").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip quality");
 			} else {
@@ -164,7 +180,7 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 			}
 		});
 
-		$("#jacr-mix").on("dblclick", function () {
+		$("#jacr-mix").off("dblclick").on("dblclick", function () {
 			if (jacr.mode = "skip") {
 				API.sendChat("!skip mix");
 			} else {
@@ -173,53 +189,53 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 		});
 
 		// Waitlist //
-		$("#jacr-lock").on("dblclick", function () {
+		$("#jacr-lock").off("dblclick").on("dblclick", function () {
 			API.sendChat("!lock");
 		});
 
-		$("#jacr-unlock").on("dblclick", function () {
+		$("#jacr-unlock").off("dblclick").on("dblclick", function () {
 			API.sendChat("!unlock");
 		});
 
-		$("#jacr-ping").on("dblclick", function () {
+		$("#jacr-ping").off("dblclick").on("dblclick", function () {
 			API.sendChat("!ping");
 		});
 
 		// Input //
-		$("#jacr-kick").on("dblclick", function () {
-			var text = $("#jacr-input").text();
+		$("#jacr-kick").off("dblclick").on("dblclick", function () {
+			var text = $("#jacr-input").val();
 			API.sendChat("!kick @" + text);
 		});
 
-		$("#jacr-mute").on("dblclick", function () {
-			var text = $("#jacr-input").text();
+		$("#jacr-mute").off("dblclick").on("dblclick", function () {
+			var text = $("#jacr-input").val();
 			API.sendChat("!mute @" + text);
 		});
 
-		$("#jacr-ban").on("dblclick", function () {
-			var text = $("#jacr-input").text();
+		$("#jacr-ban").off("dblclick").on("dblclick", function () {
+			var text = $("#jacr-input").val();
 			API.sendChat("!ban @" + text);
 		});
 
-		$("#jacr-mottoset").on("dblclick", function () {
-			var text = $("#jacr-input").text();
+		$("#jacr-mottoset").off("dblclick").on("dblclick", function () {
+			var text = $("#jacr-input").val();
 			API.sendChat("!mottoset " + text);
 		});
 
 		// Misc //
-		$("#jacr-stats").on("dblclick", function () {
+		$("#jacr-stats").off("dblclick").on("dblclick", function () {
 			API.sendChat("!stats");
 		});
 
-		$("#jacr-history").on("dblclick", function () {
+		$("#jacr-history").off("dblclick").on("dblclick", function () {
 			API.sendChat("!history");
 		});
 
-		$("#jacr-status").on("dblclick", function () {
+		$("#jacr-status").off("dblclick").on("dblclick", function () {
 			API.sendChat("!status");
 		});
 
-		$("#jacr-link").on("dblclick", function () {
+		$("#jacr-link").off("dblclick").on("dblclick", function () {
 			API.sendChat("!link");
 		});
 
