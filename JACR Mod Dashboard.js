@@ -97,15 +97,15 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 		$("#jacr-skip").off("click").on("click", function () {
 			// Change mode
 			jacr.mode = "skip";
-			$("#jacr-skip").addClass("jacr-ui-active");
-			$("#jacr-lockskip").removeClass("jacr-ui-active");
+			$("#jacr-skip").addClass("active");
+			$("#jacr-lockskip").removeClass("active");
 		});
 
 		$("#jacr-lockskip").off("click").on("click", function () {
 			// Change mode
 			jacr.mode = "lockskip";
-			$("#jacr-skip").removeClass("jacr-ui-active");
-			$("#jacr-lockskip").addClass("jacr-ui-active");
+			$("#jacr-skip").removeClass("active");
+			$("#jacr-lockskip").addClass("active");
 		});
 
 		// Skip button
