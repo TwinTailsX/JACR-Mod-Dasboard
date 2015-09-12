@@ -9,21 +9,32 @@
 
 // Variables //
 var jacr = {
-	version: "v0.3.4",
+	version: "v0.4.4",
 	mode: "skip",
 	open: false
 };
 
 // Activate
-$("head").append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/styles.css'>");
+$("head").append(
+	"<link rel='stylesheet' type='text/css' href='https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/styles.css'>");
 
 // Retrieve external HTML and append to body
-$.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", function (data) {
+$.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
+	function (ui) {
+		var button = "<div id='jacr-open'>";
+				button += "<i class='icon icon-settings-white'></i>";
+				button += "<img src='https://pbs.twimg.com/profile_images/635749955030921217/w5F52j48_bigger.png'>";
+				button += "</div>";
+
+	// If RS is loaded, remove the skip button
+	if ($("#rs-skip-button").length > 0) {
+		$("#rs-skip-button").css("display", "none");
+	}
 	// Add button to Community Settings menu
-	$("#room-settings-menu").append("<a id='jacr-open' class='item general' href=''><i class='icon icon-settings-white'></i><span class='label'>Dashboard</span></a>");
+	$("#now-playing-bar").append(button);
 
 	// Add pane
-	$("#room-settings").append(data);
+	$("#room").append(ui);
 
 	// Add functionality
 	$("#jacr-open").on("click", function (event) {
@@ -36,10 +47,11 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 			//$("#jacr-open").removeClass("selected");
 
 			// Hide settings pane
-			$("#room-settings .general-settings").css("display", "none");
+			//$("#room-settings .general-settings").css("display", "none");
 
 			// Show dashboard
-			$("#jacr-ui").css("display", "block");
+			//$("#jacr-ui").css("display", "block");
+			$("#jacr-ui").css("height", "100%");
 
 			jacr.open = true;
 		} else {
@@ -49,10 +61,11 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html", 
 			//$("#jacr-open").removeClass("selected");
 
 			// Hide dashboard
-			$("#jacr-ui").css("display", "none");
+			//$("#jacr-ui").css("display", "none");
+			$("#jacr-ui").css("height", "0%");
 
 			// Show settings pane
-			$("#room-settings .general-settings").css("display", "block");
+			//$("#room-settings .general-settings").css("display", "block");
 
 			jacr.open = false;
 		}

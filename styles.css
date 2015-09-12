@@ -2,14 +2,15 @@
 .jacr-ui {
   display: none;
   position: absolute;
-  top: 0;
-  left: 220px;
+  top: -740px;
+  left: 0px;
   /*background-color: #282C35;*/
-  width: 744px;
-  height: 100%;
+  width: 964px;
+  height: 632px;
   color: #eee;
   padding: 10px;
   text-align: center;
+  z-index: 17;
 }
 
 .jacr-ui h4 {
@@ -54,6 +55,18 @@
 #jacr-open {
   color: #eee;
   background: transparent;
+  position: absolute;
+  right: 55px;
+  width: 54px;
+  height: 54px;
+  background-color: blue;
+  box-shadow: inset 0 -2px 0 -1px #0A0A0A;
+  cursor: pointer;
+  transition: height 2s;
+}
+
+#jacr-open img {
+  height: 55px;
 }
 
 #jacr-switchbox {
