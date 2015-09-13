@@ -122,3 +122,17 @@ div#your-active-playlist {
 #footer-user .info .bar > .progress {
   margin: auto;
 }
+
+/* Fix playlists search box */
+#search-input-field {
+  height: inherit;
+}
+
+#filter-input input {
+  height: inherit;
+}
+
+/* Fix playlists buttons */
+#playlist-menu .menu .row {
+  margin: inherit;
+}
