@@ -32,7 +32,7 @@
 
 #jacr-switchbox > .active {
   /*background-color: #8AAFD1;*/
-  #505255
+  background-color: #505255 !important;
 }
 
 .jacr-button a {
@@ -98,6 +98,14 @@
   color: #8AAFD1;
 }
 
+#jacr-instructions {
+  margin-top: 40px;
+}
+
+
+
+
+
 /* Prevent Materialize from interfering with plug CSS */
 
 /* Fix chatbox */
@@ -106,11 +114,11 @@
 }
 
 /* Fix playlist name */
-#footer.bar-button.section {
+div#your-active-playlist {
   padding-top: inherit;
 }
 
 /* Fix loading bar */
-#footer-user.info.bar.progress {
+#footer-user .info .bar > .progress {
   margin: auto;
 }
