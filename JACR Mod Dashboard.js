@@ -24,13 +24,15 @@ $("head").append(
 $("head").append(
 	"<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>");
 
-$.getScript("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js",
+/*$.getScript("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js",
 	function (data) {
 		//data();
 		console.log("Loaded MaterializeJS");
 	}).fail(function (error) {
 		//alert("JACR Mod Dashboard: Can't load Materialize :l");
-	});
+	});*/
+
+$("body").append("<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>");
 
 // Retrieve external HTML and append to body
 $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
@@ -41,9 +43,11 @@ $.get("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/dashboard.html",
 				button += "</div>";
 
 	// If RS is loaded, remove the skip button
-	if ($("#rs-skip-button").length > 0) {
-		$("#rs-skip-button").css("display", "none");
-	}
+	setTimeout(function () {
+		if ($("#rs-skip-button").length > 0) {
+			$("#rs-skip-button").css("display", "none");
+		}
+	}, 3000);
 	// Add button to header menu
 	$("#now-playing-bar").append(button);
 
