@@ -9,7 +9,7 @@
 
 // Variables //
 var jacr = {
-	version: "v0.4.5",
+	version: "v0.4.6",
 	mode: "skip",
 	open: false
 };
