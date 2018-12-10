@@ -12,7 +12,7 @@
         },
         c: function() {
             loaded = true;
-            $.getScript("https://rawgit.com/TwinTailsX/JACR-Mod-Dashboard/master/JACR%20Mod%20Dashboard.js");
+            $.getScript("https://cdn.jsdelivr.net/gh/TwinTailsX/JACR-Mod-Dashboard@master/JACR%20Mod%20Dashboard.js");
         }
     };
     a.b();
